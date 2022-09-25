@@ -1,0 +1,81 @@
+<TelaPrincipal>:
+    cols: 1
+    rows: 5
+
+    #Variáveis Goblais
+    sexo: sexo
+    
+    canvas:
+        Color: 
+            rgba: (237/255, 240/255, 219/255, 0.8)
+        Rectangle:
+            pos: root.pos
+            size: root.size
+
+    RelativeLayout:
+        
+        Label:
+            font_size: '14sp'
+            text: 'Nome:'
+            color: 'black'
+            pos_hint: {'x': -0.3, 'y': 0}
+
+        TextInput:
+        
+            id: nome
+            hint_text: 'Informe seu nome...'
+            color: 'black'
+            pos_hint: {'center': (.5, .5)}
+            size_hint: (None, None)
+            width: 300
+            height: 30
+            on_active:
+                #root.verificarEscolhas()
+
+    RelativeLayout:
+    
+        Label:
+            text: 'Sexo:'
+            color: 'black'
+            pos_hint: {'center': (0.199, .5)}
+
+        Spinner:
+            id: sexo
+            size_hint: None, None
+            size: 120, 30
+            pos_hint: {'center': (.345, .5)}
+            text: 'Escolha...'
+            values: ('Masculino', 'Feminino')
+    
+    RelativeLayout:
+
+        Label:
+            text: 'Idade:'
+            color: 'black'
+            pos_hint: {'center': (0.199, .5)}
+        
+        TextInput:
+            id: idade
+            color: 'black'
+            pos_hint: {'center': (.285, .5)}
+            size_hint: (None, None)
+            width: 50
+            height: 30
+    
+    RelativeLayout:
+        Button:
+            text: 'Verificar'
+            size_hint: 0.2, 0.4
+            pos_hint: {'center': (.36, .5)}
+            on_press: root.verifica()
+        Button:
+            text: 'Limpar'
+            size_hint: 0.2, 0.4
+            pos_hint: {'center': (.65, .5)}
+            on_press: root.limpa()
+    
+    
+    Label:
+        id: txtResult
+        color: 'black'
+        font_size: '14sp'
